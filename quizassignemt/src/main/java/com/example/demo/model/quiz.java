@@ -10,7 +10,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @Entity
-public class quiz {
+public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -24,7 +24,7 @@ public class quiz {
     @OneToMany(cascade = {CascadeType.ALL})
     private Set<Question> questionList;
 
-    public quiz(int id, String quiz_title, int total_points, int time_allowed, Date deadline) {
+    public Quiz(int id, String quiz_title, int total_points, int time_allowed, Date deadline) {
         this.id = id;
         this.quiz_title = quiz_title;
         this.total_points = total_points;
