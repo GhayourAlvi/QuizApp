@@ -1,9 +1,9 @@
 package com.example.demo;
 
-import com.example.demo.model.quiz;
+import com.example.demo.model.Quiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.repo.quiz_repo;
+import com.example.demo.repo.Quiz_repo;
 
 import java.util.List;
 
@@ -12,19 +12,19 @@ import java.util.List;
 public class control {
 
     @Autowired
-    quiz_repo quizRepo;
+    Quiz_repo quizRepo;
 
     @CrossOrigin
     @GetMapping(value = "/findall")
-    public List<quiz> full_data(){
-        return (List<quiz>) quizRepo.findAll();
+    public List<Quiz> full_data(){
+        return (List<Quiz>) quizRepo.findAll();
     }
 
     @CrossOrigin
     @PostMapping(value = "/save")
-    public List<quiz> persist(@RequestBody quiz Quiz_data){
+    public List<Quiz> persist(@RequestBody Quiz Quiz_data){
         quizRepo.save(Quiz_data);
-        return (List<quiz>) quizRepo.findAll();
+        return (List<Quiz>) quizRepo.findAll();
     }
 
 }
